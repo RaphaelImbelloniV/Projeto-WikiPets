@@ -98,8 +98,7 @@
                         </h5>
                         <p class="card-text">A doação para abrigos de animais desempenha um papel fundamental em
                             garantir o bem-estar e o futuro de animais indefesos</p>
-                        <a href="https://wikipetsuni.netlify.app/importancia-doar-abrigos" target="_blank"
-                            class="btn btn-primary">Leia mais</a>
+                        <a href="posts/ong.html" class="btn btn-primary">Leia mais</a>
                     </div>
                 </div>
                 <div class="card col-md-4">
@@ -111,7 +110,7 @@
                         <p class="card-text">A água é essencial para a saúde e bem-estar do seu pet. Assim como nós, os
                             animais dependem significativamente da hidratação para manter suas funções vitais e um
                             estilo de vida saudável.</p>
-                        <a href="https://wikipetsuni.netlify.app/importancia-agua-pets" target="_blank"
+                        <a href="posts/agua.html" target="_blank"
                             class="btn btn-primary">Leia mais</a>
                     </div>
                 </div>
@@ -123,7 +122,7 @@
                         </h5>
                         <p class="card-text">Bem-vindo ao maravilhoso mundo da paternidade de gatos! Ser um bom dono de
                             gato envolve mais do que apenas alimentar e fornecer água.</p>
-                        <a href="https://wikipetsuni.netlify.app/cats" target="_blank" class="btn btn-primary">Leia
+                        <a href="posts/gatos.html" target="_blank" class="btn btn-primary">Leia
                             mais</a>
                     </div>
                 </div>
@@ -132,8 +131,12 @@
     </section>
 </body>
 <script>
+    const hamburger = document.querySelector('.manual-hamburger');
+    const navLinks = document.querySelector('.manual-nav-links');
 
-
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('manual-active');
+    });
 </script>
 
 </html>
