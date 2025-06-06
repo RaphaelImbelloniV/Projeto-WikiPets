@@ -111,9 +111,9 @@ body {
   object-fit: cover;
 }
 
-/*CARROSSEL*/
+/* CARROSSEL */
 .slider {
-  height: 250px;
+  height: 120px;
   margin: auto;
   position: relative;
   width: 100%;
@@ -121,34 +121,22 @@ body {
   place-items: center;
   overflow: hidden;
 }
+
 .slide-track {
   display: flex;
-  width: calc(250px * 18);
-  width: 100%;
-  animation: scroll 40s linear infinite;
-}
-.slide-track:hover {
-  animation-play-state: paused;
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-250px * 9));
-  }
+  width: 1800px; 
 }
 
 .slide {
-  height: 200px;
-  width: 280px;
+  height: 100px;
+  width: 150px;
   display: flex;
   padding: 15px;
 }
+
 .slide img {
-  width: 180px;
-  height: 180px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   margin: 0 10px;
   object-fit: cover;
