@@ -1,5 +1,3 @@
-// Arquivo: /js/recommendations.js
-
 document.addEventListener('DOMContentLoaded', function() {
     const container = document.getElementById('recommended-posts-container');
     if (!container) return; 
