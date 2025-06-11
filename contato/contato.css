@@ -3,6 +3,11 @@ body {
   margin: 0;
   padding: 0;
 }
+@media (max-width: 768px) {
+  .manual-animais {
+    display: none !important;
+  }
+}
 
 .manual-header {
   background-color: #A62631;
