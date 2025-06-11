@@ -6,6 +6,11 @@ body {
     display: none !important;
   }
 }
+@media (max-width: 768px) {
+  .manual-animais {
+    display: none !important;
+  }
+}
 
 }
 @media (max-width: 768px) {
