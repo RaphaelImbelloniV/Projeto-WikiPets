@@ -10,47 +10,21 @@
 </head>
 
 <body>
-    <div class="manual-header">
-        <nav class="manual-navbar">
-            <div class="manual-logo">
-                <img class="images" src="../imgs/logo.svg" alt="logo">
-            </div>
-            <div id="header-line"></div>
-            <ul class="manual-nav-links">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../saude/saude.html">Saúde</a></li>
-                <li><a href="../eventos/eventos.html">Eventos</a></li>
-            </ul>
-            <div class="manual-hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
+    <div id="header-container"></div>
 
-        <div class="manual-banner">
-            <div class="manual-animais">
-                <img src="../imgs/cat.svg" alt="gato">
-                <img src="../imgs/dog.svg" alt="cachorro">
-            </div>
-            <div class="manual-banner-text">
-                <h1>WikiPets</h1>
-                <p>Ajudamos no cuidado com seu pet</p>
+    <div class="container">
+        <div id="main">
+            <div class="post">
+                <!-- CONTEUDO POST -->
             </div>
         </div>
     </div>
-    
-    <!-- CONTEUDO POST -->
+
+    <div id="footer-container"></div>
+
+    <script src="../js/header-footer.js"></script>
 
 </body>
 
-<script>
-    const hamburger = document.querySelector('.manual-hamburger');
-    const navLinks = document.querySelector('.manual-nav-links');
-
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('manual-active');
-    });
-</script>
 
 </html>

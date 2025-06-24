@@ -104,12 +104,32 @@ body {
 
 .card {
   padding: 0%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 1rem;
+}
+
+.card-text {
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+
+.card-body .btn {
+  align-self: flex-start;
+  margin-top: auto;
 }
 
 /* CARROSSEL */
@@ -209,12 +229,12 @@ body {
 
 .footer {
   background-color: #a62631;
-  /* Mesma cor do header */
+    /* Mesma cor do header */
   color: #fff;
   padding: 30px 20px;
   font-family: Arial, sans-serif;
   border-top: 3px solid #f2c53d;
-  /* Borda dourada para destaque */
+    /* Borda dourada para destaque */
 }
 
 .footer-container {
