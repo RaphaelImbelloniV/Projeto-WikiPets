@@ -12,36 +12,7 @@
 </head>
 
 <body>
-    <div class="manual-header">
-        <nav class="manual-navbar">
-            <div class="manual-logo">
-                <img class="images" src="./imgs/logo.svg" alt="logo">
-            </div>
-            <div id="header-line"></div>
-            <ul class="manual-nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="saude/saude.html">Saúde</a></li>
-                <li><a href="eventos/eventos.html">Eventos</a></li>
-                <li><a href="contato/contato.html">Contato</a></li>
-            </ul>
-            <div class="manual-hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-
-        <div class="manual-banner">
-            <div class="manual-animais">
-                <img src="imgs/cat.svg" alt="gato">
-                <img src="imgs/dog.svg" alt="cachorro">
-            </div>
-            <div class="manual-banner-text">
-                <h1>WikiPets</h1>
-                <p>Ajudamos no cuidado com seu pet</p>
-            </div>
-        </div>
-    </div>
+    <div id="header-container"></div>
 
     <div class="slider">
         <div class="slide-track">
@@ -96,39 +67,12 @@
                 </div>
             </div>
         </div>
+
     </section>
-
-    <script>
-        const hamburger = document.querySelector('.manual-hamburger');
-        const navLinks = document.querySelector('.manual-nav-links');
-
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('manual-active');
-        });
-    </script>
-
+            <div id="footer-container"></div>
+    <script src="js/header-footer.js"></script>
     <script src="js/carrosel.js"></script>
 </body>
-<footer class="footer">
-    <div class="footer-container">
 
-        <div class="footer-logo">
-            <img src="imgs/logo.svg" alt="WikiPets Logo" class="logo-img">
-            <h3>WikiPets</h3>
-        </div>
-        <div class="footer-contact">
-            <h4>Entre em Contato</h4>
-            <p>Email: projwikipets@gmail.com</p>
-            <ul class="social-links">
-                <li><a href="https://www.instagram.com/wikipets_projeto/" target="_blank"
-                        class="social-link instagram-link" aria-label="Siga WikiPets no Instagram"><i
-                            class="fab fa-instagram"></i> Instagram</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p>&copy; 2025 WikiPets. Todos os direitos reservados.</p>
-    </div>
-</footer>
 
 </html>
