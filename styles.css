@@ -145,7 +145,8 @@ body {
 
 .slide-track {
   display: flex;
-  width: 1800px;
+  width: calc(150px * 36); /* 12 slides originais + 24 clones */
+  animation: none; /* Remover qualquer animação CSS que possa conflitar */
 }
 
 .slide {

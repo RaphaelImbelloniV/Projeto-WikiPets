@@ -1,27 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
     const slider = document.querySelector('.slider');
     const slideTrack = document.querySelector('.slide-track');
+    const slides = document.querySelectorAll('.slide');
     const slideWidth = 150;
-    const totalSlides = 12;
-    const visibleSlides = 6;
-    const clones = document.querySelectorAll('.slide'); 
+    const speed = 0.5;
 
-    clones.forEach(slide => {
+    slides.forEach(slide => {
+        const clone = slide.cloneNode(true);
+        slideTrack.appendChild(clone);
+    });
+
+    slides.forEach(slide => {
         const clone = slide.cloneNode(true);
         slideTrack.appendChild(clone);
     });
 
     let position = 0;
-    const speed = 1;
+    const totalSlides = slides.length;
+    const totalWidth = slideWidth * totalSlides;
 
     function scroll() {
         position -= speed;
-        if (Math.abs(position) >= slideWidth * totalSlides) {
-            position = 0; 
+        if (Math.abs(position) >= totalWidth) {
+            position = 0;
         }
         slideTrack.style.transform = `translateX(${position}px)`;
-        console.log('Position:', position);
-
         requestAnimationFrame(scroll);
     }
 
