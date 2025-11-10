@@ -145,8 +145,8 @@ body {
 
 .slide-track {
   display: flex;
-  width: calc(150px * 36); /* 12 slides originais + 24 clones */
-  animation: none; /* Remover qualquer animação CSS que possa conflitar */
+  width: calc(150px * 36);
+  animation: none; 
 }
 
 .slide {
@@ -230,12 +230,10 @@ body {
 
 .footer {
   background-color: #a62631;
-    /* Mesma cor do header */
   color: #fff;
   padding: 30px 20px;
   font-family: Arial, sans-serif;
   border-top: 3px solid #f2c53d;
-    /* Borda dourada para destaque */
 }
 
 .footer-container {
@@ -259,7 +257,6 @@ body {
   width: 60px;
   height: auto;
   border-radius: 10px;
-  /* Bordas suaves para o logo */
 }
 
 .footer-title {
@@ -353,10 +350,9 @@ body {
   text-decoration-thickness: 2px;
   color: #fff !important;
 }
-/* Adicione no final do seu arquivo: ../styles.css */
 
 .recommended-posts-section {
-    max-width: 1140px; /* Alinhado com a largura comum de containers bootstrap */
+    max-width: 1140px; 
     margin: 60px auto;
     padding: 0 20px;
 }
@@ -418,4 +414,54 @@ body {
     color: #555;
     line-height: 1.5;
     flex-grow: 1;
+}
+
+.page {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 20px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.page-title h3 {
+  color: #a62631;
+  font-weight: 700;
+  font-size: 2.2rem;
+}
+
+.topic {
+  margin-bottom: 60px;
+}
+
+.topic-title {
+  color: #A62631;
+  font-weight: 600;
+  font-size: 1.7rem;
+  border-left: 5px solid #F2C53D;
+  padding-left: 10px;
+  margin: 0;
+}
+
+.topic-image {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.topic-image img {
+  border-radius: 12px;
+  width: 100%;
+  max-height: 380px;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .topic-image img {
+    max-height: 280px;
+  }
 }
