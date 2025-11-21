@@ -1,6 +1,6 @@
 function getBasePath() {
     const path = window.location.pathname;
-    if (path.includes('/posts/') || path.includes('/saude/') || path.includes('/eventos/') || path.includes('/contato/')) {
+    if (path.includes('/posts/') || path.includes('/saude/') || path.includes('/eventos/') || path.includes('/contato/') || path.includes('/pets/')) {
         return '../';
     }
     return './';
@@ -73,6 +73,7 @@ function generateHeader() {
                     <li><a href="${basePath}index.html">Home</a></li>
                     <li><a href="${basePath}saude/saude.html">Saúde</a></li>
                     <li><a href="${basePath}eventos/eventos.html">Eventos</a></li>
+                    <li><a href="${basePath}pets/pets.html">Pets</a></li>
                     <li><a href="${basePath}contato/contato.html">Contato</a></li>
                 </ul>
                 <div class="manual-hamburger">
