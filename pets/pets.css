@@ -1,0 +1,223 @@
+.pets-page {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.pets-hero {
+    background: linear-gradient(135deg, #a62631 0%, #c83a4a 100%);
+    color: #fff;
+    border-radius: 18px;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    box-shadow: 0 12px 30px rgba(166, 38, 49, 0.25);
+}
+
+.pets-hero-text h3 {
+    font-size: 2.2rem;
+    margin: 0 0 12px 0;
+    color: #f2c53d;
+}
+
+.pets-hero-text p {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.pets-hero-highlight {
+    background-color: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+    padding: 24px;
+}
+
+.pets-hero-highlight p {
+    margin-top: 0;
+    font-weight: 600;
+    color: #fbe394;
+}
+
+.pets-hero-highlight ol {
+    margin: 10px 0 0 18px;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.pets-hero-highlight a {
+    color: #fbe394;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.pets-list h4 {
+    font-size: 1.9rem;
+    color: #a62631;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.pets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+.pet-card {
+    background-color: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pet-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+}
+
+.pet-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.pet-card-body {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.pet-card-body h5 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #a62631;
+}
+
+.pet-card-body p {
+    margin: 0;
+    color: #555;
+    line-height: 1.6;
+}
+
+.pet-card-body ul {
+    margin: 0;
+    padding-left: 18px;
+    color: #444;
+    font-size: 0.95rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.pet-tag {
+    align-self: flex-start;
+    background-color: rgba(166, 38, 49, 0.1);
+    color: #a62631;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cat-tag {
+    background-color: rgba(102, 126, 234, 0.12);
+    color: #4a5bdc;
+}
+
+.other-tag {
+    background-color: rgba(242, 197, 61, 0.18);
+    color: #a26b15;
+}
+
+.pets-cta {
+    background-color: #a62631;
+    color: #fff;
+    border-radius: 18px;
+    padding: 36px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    box-shadow: 0 12px 28px rgba(166, 38, 49, 0.22);
+}
+
+.pets-cta h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.8rem;
+    color: #f2c53d;
+}
+
+.pets-cta p {
+    margin: 0;
+    line-height: 1.6;
+    max-width: 520px;
+}
+
+.pets-cta-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.pets-cta .btn {
+    border-radius: 999px;
+    padding: 10px 22px;
+    font-weight: 600;
+}
+
+.pets-cta .btn-outline-light {
+    border-color: rgba(255, 255, 255, 0.8);
+    color: #fff;
+}
+
+.pets-cta .btn-outline-light:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+@media (max-width: 768px) {
+    .pets-page {
+        margin: 40px auto;
+        gap: 40px;
+    }
+
+    .pets-hero {
+        padding: 28px;
+    }
+
+    .pets-cta {
+        padding: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pets-hero-text h3 {
+        font-size: 1.8rem;
+    }
+
+    .pets-list h4 {
+        font-size: 1.6rem;
+    }
+
+    .pets-cta h4 {
+        font-size: 1.6rem;
+    }
+
+    .pets-cta-actions {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+
