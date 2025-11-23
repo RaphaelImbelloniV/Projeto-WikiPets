@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -7,6 +8,336 @@
     <link rel="stylesheet" href="../styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        /* Estilos adicionais para a página de doações */
+        :root {
+            --donation-primary: #c62828;
+            --donation-secondary: #ff6b6b;
+            --donation-accent: #ffd700;
+            --donation-text: #2c3e50;
+            --donation-light: #6c757d;
+        }
+
+        #main .container {
+            max-width: 1200px;
+        }
+
+        /* Hero Section */
+        .donation-hero {
+            background: linear-gradient(135deg, var(--donation-primary) 0%, var(--donation-secondary) 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            margin-bottom: 3rem;
+            box-shadow: 0 8px 25px rgba(198, 40, 40, 0.2);
+        }
+
+        .donation-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            font-weight: 700;
+        }
+
+        .donation-hero p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        /* Reasons Section */
+        .reasons-title {
+            font-size: 2rem;
+            color: var(--donation-primary);
+            margin: 3rem 0 2rem 0;
+            padding-bottom: 0.8rem;
+            border-bottom: 4px solid var(--donation-accent);
+            display: inline-block;
+            font-weight: 700;
+        }
+
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .reason-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-top: 5px solid var(--donation-primary);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .reason-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--donation-primary), var(--donation-secondary));
+        }
+
+        .reason-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+        }
+
+        .reason-number {
+            background: linear-gradient(135deg, var(--donation-primary), var(--donation-secondary));
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 10px rgba(198, 40, 40, 0.3);
+        }
+
+        .reason-card h3 {
+            color: var(--donation-primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .reason-card p {
+            color: var(--donation-light);
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* Decorative Divider */
+        .decorative-divider {
+            height: 250px;
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe0e0 100%);
+            border-radius: 20px;
+            margin: 3rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            gap: 2rem;
+        }
+
+        /* Contribution Section */
+        .contribution-title {
+            font-size: 2rem;
+            color: var(--donation-primary);
+            margin: 3rem 0 2rem 0;
+            padding-bottom: 0.8rem;
+            border-bottom: 4px solid var(--donation-accent);
+            display: inline-block;
+            font-weight: 700;
+        }
+
+        .contribution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0 3rem 0;
+        }
+
+        .contribution-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 15px;
+            padding: 2rem;
+            border-left: 6px solid var(--donation-secondary);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .contribution-card:hover {
+            border-left-width: 10px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            transform: translateX(5px);
+        }
+
+        .contribution-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .contribution-card strong {
+            color: var(--donation-primary);
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 0.8rem;
+        }
+
+        .contribution-card p {
+            color: var(--donation-light);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* ONG Section */
+        .ong-section {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe0e0 100%);
+            border-radius: 25px;
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: 0 8px 30px rgba(198, 40, 40, 0.15);
+        }
+
+        .ong-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .ong-header h1 {
+            color: var(--donation-primary);
+            font-size: 2.3rem;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+
+        .ong-header h2 {
+            color: var(--donation-secondary);
+            font-size: 2rem;
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        .ong-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .ong-image {
+            text-align: center;
+        }
+
+        .ong-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .ong-image img:hover {
+            transform: scale(1.05);
+        }
+
+        .ong-info p {
+            color: var(--donation-text);
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .ong-social {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .ong-social a {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.9rem 1.8rem;
+            background: var(--donation-primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(198, 40, 40, 0.3);
+        }
+
+        .ong-social a:hover {
+            background: var(--donation-secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(198, 40, 40, 0.4);
+            color: white;
+        }
+
+        .ong-social a::before {
+            content: '📱';
+            margin-right: 0.7rem;
+            font-size: 1.3rem;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(135deg, var(--donation-primary) 0%, var(--donation-secondary) 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 2rem;
+            box-shadow: 0 8px 30px rgba(198, 40, 40, 0.3);
+        }
+
+        .final-cta p {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            margin-bottom: 1rem;
+        }
+
+        .final-cta p:last-child {
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .donation-hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .reasons-grid,
+            .contribution-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ong-content {
+                grid-template-columns: 1fr;
+            }
+
+            .decorative-divider {
+                font-size: 3rem;
+                height: 180px;
+            }
+
+            .ong-social {
+                flex-direction: column;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+    </style>
 </head>
 
 <body>
@@ -14,67 +345,114 @@
 
     <div id="main">
         <div class="container mt-3">
-            <div class="post">
+            <!-- Hero Section -->
+            <div class="donation-hero animate-in">
                 <h1>A Importância de Doar para Abrigos de Animais 🐾</h1>
                 <p>A doação para abrigos de animais desempenha um papel fundamental em garantir o bem-estar e o futuro
                     de animais indefesos. Essas contribuições generosas têm um impacto direto nas vidas dos animais e
                     nas operações dos abrigos, proporcionando benefícios significativos para toda a comunidade.</p>
-                <h2>Razões para Doar:</h2>
-                <h3>1. <strong>Amplo Apoio aos Necessitados:</strong></h3>
-                <p>Muitos animais em abrigos vêm de situações difíceis, resgatados de abandono, maus-tratos ou situações
-                    de rua.<br>
-                    Doações ajudam a fornecer cuidados essenciais, alimentação adequada e tratamento veterinário.</p>
-                <h3>2. <strong>Manutenção das Operações do Abrigo:</strong></h3>
-                <p>Os abrigos desempenham um papel vital na sociedade ao oferecerem um local seguro e acolhedor para
-                    animais em busca de lares amorosos. Doações ajudam a manter as operações, desde a infraestrutura até
-                    os recursos necessários para cuidar dos animais.</p>
-                <h3>3. <strong>Promoção de Adoções Responsáveis:</strong></h3>
-                <p>Doações facilitam programas de adoção responsável, incluindo processos de seleção, esterilização e
-                    microchipagem. Essas práticas contribuem para garantir que os animais encontrem lares permanentes e
-                    amorosos.</p>
-                <h3>4. <strong>Cuidados com a Saúde:</strong></h3>
-                <p>Fundos provenientes de doações permitem que abrigos forneçam cuidados veterinários regulares,
-                    tratamento de doenças e vacinação. Isso contribui para a saúde geral e a felicidade dos animais.</p>
-                <h2>Como Você Pode Contribuir:</h2>
-                <ul>
-                    <li>
-                        <p><strong>Doações Monetárias:</strong>
-                            Contribua com quantias financeiras para ajudar a cobrir despesas operacionais e custos
-                            médicos.</p>
-                    </li>
-                    <li>
-                        <p><strong>Doação de Suprimentos:</strong>
-                            Itens como alimentos, cobertores, brinquedos e produtos de limpeza são sempre bem-vindos.
-                        </p>
-                    </li>
-                    <li>
-                        <p><strong>Voluntariado:</strong>
-                            Além de doações materiais, seu tempo e habilidades voluntárias são inestimáveis para os
-                            abrigos.</p>
-                    </li>
-                    <li>
-                        <p><strong>Promoção da Conscientização:</strong>
-                            Compartilhe informações sobre a importância das doações para abrigos e incentive outros a
-                            participarem.</p>
-                    </li>
-                </ul>
-                <h1>Conheça a ONG!</h1>
-                <h2>Amor não tem Raça</h2>
             </div>
-            <img class="img-fluid" src="../imgs/ong.png" alt="ONG logo">
-            <div class="doacao_last">
-                <div class="post">
-                    <p>A ONG "Amor não tem raça" busca trazer equilíbrio na população animal, através da diminuição do
-                        índice de abandono e maus tratos, para prevenir agravos à saúde pública e ao meio ambiente.
-                        Além disso, é realiza um trabalho de construção de uma consciência sobre a responsabilidade de
-                        se adotar um animal, promovendo o acolhimento daqueles que se encontram abandonados, e evitando
-                        a compra.</p>
-                    <p><a href="https://www.facebook.com/amornaotemracajf/">Facebook</a></p>
-                    <p><a href="https://www.instagram.com/amornaotemracajf/">Instagram</a></p>
-                    <p>Ao doar para abrigos de animais, você se torna parte integrante da rede de apoio que torna
-                        possível oferecer uma segunda chance a animais que precisam.</p>
-                    <p>Sua generosidade não apenas transforma vidas animais, mas também contribui para a construção de
-                        uma comunidade mais compassiva e solidária. 🐾✨</p>
+
+            <!-- Reasons Section -->
+            <h2 class="reasons-title">Razões para Doar:</h2>
+            
+            <div class="reasons-grid">
+                <div class="reason-card animate-in">
+                    <div class="reason-number">1</div>
+                    <h3><strong>Amplo Apoio aos Necessitados</strong></h3>
+                    <p>Muitos animais em abrigos vêm de situações difíceis, resgatados de abandono, maus-tratos ou situações
+                        de rua. Doações ajudam a fornecer cuidados essenciais, alimentação adequada e tratamento veterinário.</p>
+                </div>
+
+                <div class="reason-card animate-in">
+                    <div class="reason-number">2</div>
+                    <h3><strong>Manutenção das Operações do Abrigo</strong></h3>
+                    <p>Os abrigos desempenham um papel vital na sociedade ao oferecerem um local seguro e acolhedor para
+                        animais em busca de lares amorosos. Doações ajudam a manter as operações, desde a infraestrutura até
+                        os recursos necessários para cuidar dos animais.</p>
+                </div>
+
+                <div class="reason-card animate-in">
+                    <div class="reason-number">3</div>
+                    <h3><strong>Promoção de Adoções Responsáveis</strong></h3>
+                    <p>Doações facilitam programas de adoção responsável, incluindo processos de seleção, esterilização e
+                        microchipagem. Essas práticas contribuem para garantir que os animais encontrem lares permanentes e
+                        amorosos.</p>
+                </div>
+
+                <div class="reason-card animate-in">
+                    <div class="reason-number">4</div>
+                    <h3><strong>Cuidados com a Saúde</strong></h3>
+                    <p>Fundos provenientes de doações permitem que abrigos forneçam cuidados veterinários regulares,
+                        tratamento de doenças e vacinação. Isso contribui para a saúde geral e a felicidade dos animais.</p>
+                </div>
+            </div>
+
+            <!-- Decorative Divider -->
+            <div class="decorative-divider">
+                🐶 🐱 ❤️
+            </div>
+
+            <!-- Contribution Section -->
+            <h2 class="contribution-title">Como Você Pode Contribuir:</h2>
+            
+            <div class="contribution-grid">
+                <div class="contribution-card">
+                    <span class="contribution-icon">💰</span>
+                    <strong>Doações Monetárias:</strong>
+                    <p>Contribua com quantias financeiras para ajudar a cobrir despesas operacionais e custos médicos.</p>
+                </div>
+
+                <div class="contribution-card">
+                    <span class="contribution-icon">🎁</span>
+                    <strong>Doação de Suprimentos:</strong>
+                    <p>Itens como alimentos, cobertores, brinquedos e produtos de limpeza são sempre bem-vindos.</p>
+                </div>
+
+                <div class="contribution-card">
+                    <span class="contribution-icon">🤝</span>
+                    <strong>Voluntariado:</strong>
+                    <p>Além de doações materiais, seu tempo e habilidades voluntárias são inestimáveis para os abrigos.</p>
+                </div>
+
+                <div class="contribution-card">
+                    <span class="contribution-icon">📢</span>
+                    <strong>Promoção da Conscientização:</strong>
+                    <p>Compartilhe informações sobre a importância das doações para abrigos e incentive outros a participarem.</p>
+                </div>
+            </div>
+
+            <!-- ONG Section -->
+            <div class="ong-section">
+                <div class="ong-header">
+                    <h1>Conheça a ONG!</h1>
+                    <h2>Amor não tem Raça</h2>
+                </div>
+
+                <div class="ong-content">
+                    <div class="ong-image">
+                        <img class="img-fluid" src="../imgs/ong.png" alt="ONG logo">
+                    </div>
+
+                    <div class="ong-info">
+                        <p>A ONG "Amor não tem raça" busca trazer equilíbrio na população animal, através da diminuição do
+                            índice de abandono e maus tratos, para prevenir agravos à saúde pública e ao meio ambiente.</p>
+                        <p>Além disso, realiza um trabalho de construção de uma consciência sobre a responsabilidade de
+                            se adotar um animal, promovendo o acolhimento daqueles que se encontram abandonados, e evitando
+                            a compra.</p>
+
+                        <div class="ong-social">
+                            <a href="https://www.facebook.com/amornaotemracajf/" target="_blank">Facebook</a>
+                            <a href="https://www.instagram.com/amornaotemracajf/" target="_blank">Instagram</a>
+                        </div>
+
+                        <div class="final-cta">
+                            <p>Ao doar para abrigos de animais, você se torna parte integrante da rede de apoio que torna
+                                possível oferecer uma segunda chance a animais que precisam.</p>
+                            <p>Sua generosidade não apenas transforma vidas animais, mas também contribui para a construção de
+                                uma comunidade mais compassiva e solidária. 🐾✨</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -83,17 +461,15 @@
     <section class="recommended-posts-section">
         <h2>Continue aprendendo</h2>
         <div id="recommended-posts-container">
-            </div>
+        </div>
     </section>
 
     <div id="footer-container"></div>
 
     <script src="../js/header-footer.js"></script>
+    <script src="../js/posts-db.js"></script>
+    <script src="../js/recommendations.js"></script>
 
 </body>
-
-
-<script src="../js/posts-db.js"></script>
-<script src="../js/recommendations.js"></script>
 
 </html>
